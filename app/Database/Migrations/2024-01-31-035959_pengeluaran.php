@@ -26,7 +26,7 @@ class Pengeluaran extends Migration
 				'constraint' => 20,
 				'null' => true
 			],
-			'PENGELUARAN_createdAt DEFAULT DATETIME current_timestamp()',
+			'PENGELUARAN_createdAt DATETIME DEFAULT current_timestamp',
 			'PENGELUARAN_createdBy' => [
 				'type' => 'INT',
 				'constraint' => 10,

@@ -37,7 +37,7 @@ class User extends Migration
 				'constraint' => 10,
 				'null' => true
 			],
-			'USER_createdAt DEFAULT DATETIME current_timestamp()',
+			'USER_createdAt DATETIME DEFAULT current_timestamp',
 			'USER_createdBy' => [
 				'type' => 'INT',
 				'constraint' => 10,

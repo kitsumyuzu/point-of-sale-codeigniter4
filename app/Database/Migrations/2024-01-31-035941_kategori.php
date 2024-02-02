@@ -18,7 +18,7 @@ class Kategori extends Migration
 				'constraint' => 255,
 				'null' => true
 			],
-			'KATEGORI_createdAt DEFAULT DATETIME current_timestamp()',
+			'KATEGORI_createdAt DATETIME DEFAULT current_timestamp',
 			'KATEGORI_createdBy' => [
 				'type' => 'INT',
 				'constraint' => 10,

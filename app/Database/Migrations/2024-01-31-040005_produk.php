@@ -55,7 +55,7 @@ class Produk extends Migration
 				'null' => true,
 				'default' => 0
 			],
-			'PRODUK_createdAt DEFAULT DATETIME current_timestamp()',
+			'PRODUK_createdAt DATETIME DEFAULT current_timestamp',
 			'PRODUK_createdBy' => [
 				'type' => 'INT',
 				'constraint' => 10,

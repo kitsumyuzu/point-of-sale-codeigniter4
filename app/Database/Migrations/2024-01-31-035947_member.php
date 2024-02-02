@@ -33,7 +33,7 @@ class Member extends Migration
 				'constraint' => 20,
 				'null' => true
 			],
-			'MEMBER_createdAt DEFAULT DATETIME current_timestamp()',
+			'MEMBER_createdAt DATETIME DEFAULT current_timestamp',
 			'MEMBER_createdBy' => [
 				'type' => 'INT',
 				'constraint' => 10,
