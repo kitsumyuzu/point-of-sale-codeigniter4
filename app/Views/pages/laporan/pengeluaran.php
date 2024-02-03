@@ -35,8 +35,8 @@
                                                 <tbody>
                                                     <?php $no = 1;
                                                         foreach ($data_pengeluaran as $data) {
-                                                            $created_date = new DateTime($data['PEN_CreatedAt'], new DateTimeZone('Asia/Jakarta'));
-                                                            $updated_date = new DateTime($data['PEN_UpdatedAt'], new DateTimeZone('Asia/Jakarta'));
+                                                            $created_date = new DateTime($data['PENGELUARAN_CreatedAt'], new DateTimeZone('Asia/Jakarta'));
+                                                            $updated_date = new DateTime($data['PENGELUARAN_UpdatedAt'], new DateTimeZone('Asia/Jakarta'));
                                                             $pengeluaran_date = new DateTime($data['tanggal_pengeluaran']);
                                                     ?>
                                                         <tr style="text-align: center;">
@@ -60,8 +60,8 @@
                                                                 <button type="button" class="btn btn-link btn-sm btn-view"
                                                                 data-toggle="modal"
                                                                 data-target="#view_pengeluaran_modals"
-                                                                data-createdat="<?= $data['PEN_CreatedAt'] ? $created_date -> format('l, j F Y, H:i:s A') : 'This data anonymously created' ?>"
-                                                                data-updatedat="<?= $data['PEN_UpdatedAt'] ? $updated_date -> format('l, j F Y, H:i:s A') : 'This data hasn\'t been updated' ?>">
+                                                                data-createdat="<?= $data['PENGELUARAN_createdAt'] ? $created_date -> format('l, j F Y, H:i:s A') : 'This data anonymously created' ?>"
+                                                                data-updatedat="<?= $data['PENGELUARAN_updatedAt'] ? $updated_date -> format('l, j F Y, H:i:s A') : 'This data hasn\'t been updated' ?>">
                                                                 <i class="fas fa-eye" style="color: #5bc0de"></i></button>
                                                             </td>
                                                         </tr>

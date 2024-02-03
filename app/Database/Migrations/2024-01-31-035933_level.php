@@ -2,7 +2,7 @@
 
 use CodeIgniter\Database\Migration;
 
-class Leve extends Migration
+class Level extends Migration
 {
 	public function up()
 	{

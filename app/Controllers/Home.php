@@ -79,7 +79,7 @@ class Home extends BaseController {
 			} else if (in_array(session() -> get('level'), [1]) && session() -> get('id') > 0) {
 				$Schema = new Schema();
 
-					$on = 'supplier.id_produk = produk.id_produk';
+					$on = 'supplier.produk_supplier = produk.id_produk';
 					$fetch['data_supplier'] = $Schema -> visual_table_join2('supplier', 'produk', $on);
 					$fetch['data_produk'] = $Schema -> visual_table('produk');
 
@@ -152,7 +152,7 @@ class Home extends BaseController {
 							'nama_member' => $nama_member,
 							'alamat_member' => $alamat_member,
 							'nomor_handphone_member' => '+62 ' . $nomor_handphone_member,
-							'MBR_CreatedBy' => session() -> get('id')
+							'MEMBER_createdBy' => session() -> get('id')
 						));
 
 				if ($data) {
@@ -184,8 +184,8 @@ class Home extends BaseController {
 							'nama_member' => $nama_member,
 							'alamat_member' => $alamat_member,
 							'nomor_handphone_member' => '+62 ' . $nomor_handphone_member,
-							'MBR_UpdatedAt' => $date -> format('Y-m-d H:i:s'),
-							'MBR_UpdatedBy' => session() -> get('id')
+							'MEMBER_updatedAt' => $date -> format('Y-m-d H:i:s'),
+							'MEMBER_updatedBy' => session() -> get('id')
 						), array('id_member' => $id_member));
 
 				if ($data) {
@@ -239,11 +239,11 @@ class Home extends BaseController {
 					$nomor_handphone_supplier = $this -> request -> getPost('nomor_handphone_supplier');
 
 						$data = $Schema -> create_data('supplier', array(
-							'id_produk' => $produk,
+							'produk_supplier' => $produk,
 							'nama_supplier' => $nama_supplier,
 							'alamat_supplier' => $alamat_supplier,
 							'nomor_handphone_supplier' => '+62 ' . $nomor_handphone_supplier,
-							'SR_CreatedBy' => session() -> get('id')
+							'SUPPLIER_createdBy' => session() -> get('id')
 						));
 
 				if ($data) {
@@ -277,12 +277,12 @@ class Home extends BaseController {
 					$nomor_handphone_supplier = $this -> request -> getPost('nomor_handphone_supplier');
 
 						$data = $Schema -> update_data('supplier', array(
-							'id_produk' => $produk,
+							'produk_supplier' => $produk,
 							'nama_supplier' => $nama_supplier,
 							'alamat_supplier' => $alamat_supplier,
 							'nomor_handphone_supplier' => '+62 ' . $nomor_handphone_supplier,
-							'SR_UpdatedAt' => $date -> format('Y-m-d H:i:s'),
-							'SR_UpdatedBy' => session() -> get('id')
+							'SUPPLIER_updatedAt' => $date -> format('Y-m-d H:i:s'),
+							'SUPPLIER_updatedBy' => session() -> get('id')
 						), array('id_supplier' => $id_supplier));
 
 				if ($data) {

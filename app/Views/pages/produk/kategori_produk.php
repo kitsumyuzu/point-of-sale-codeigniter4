@@ -33,12 +33,12 @@
                                                 <tbody>
                                                     <?php $no = 1;
                                                         foreach ($data_kategori as $data) {
-                                                            $created_date = new DateTime($data['KTG_CreatedAt'], new DateTimeZone('Asia/Jakarta'));
-                                                            $updated_date = new DateTime($data['KTG_UpdatedAt'], new DateTimeZone('Asia/Jakarta'));
+                                                            $created_date = new DateTime($data['KATEGORI_createdAt'], new DateTimeZone('Asia/Jakarta'));
+                                                            $updated_date = new DateTime($data['KATEGORI_updatedAt'], new DateTimeZone('Asia/Jakarta'));
                                                     ?>
                                                         <tr style="text-align: center;">
                                                             <td><?php echo $no++ ?>.</td>
-                                                            <td><?php echo $data['nama_kategori'] ? ucwords($data['nama_kategori']) : 'Kategori tidak ditemukan' ?></td>
+                                                            <td><?php echo $data['kategori'] ? ucwords($data['kategori']) : 'Kategori tidak ditemukan' ?></td>
                                                             <td>
                                                                 <a href="<?= base_url('/Produk/delete_kategori/'.$data['id_kategori']) ?>">
                                                                     <button type="button" class="btn btn-link btn-sm"><i class="fas fa-trash-can" style="color: #ff0000"></i></button>
@@ -48,14 +48,14 @@
                                                                 data-toggle="modal"
                                                                 data-target="#update_kategori_modals"
                                                                 data-id="<?= $data['id_kategori']; ?>"
-                                                                data-kategori="<?= $data['nama_kategori']; ?>">
+                                                                data-kategori="<?= $data['kategori']; ?>">
                                                                 <i class="fas fa-square-pen" style="color: #f0ad4e"></i></button>
 
                                                                 <button type="button" class="btn btn-link btn-sm btn-view"
                                                                 data-toggle="modal"
                                                                 data-target="#view_kategori_modals"
-                                                                data-createdat="<?= $data['KTG_CreatedAt'] ? $created_date -> format('l, j F Y, H:i:s A') : 'This data anonymously created' ?>"
-                                                                data-updatedat="<?= $data['KTG_UpdatedAt'] ? $updated_date -> format('l, j F Y, H:i:s A') : 'This data hasn\'t been updated' ?>">
+                                                                data-createdat="<?= $data['KATEGORI_createdAt'] ? $created_date -> format('l, j F Y, H:i:s A') : 'This data anonymously created' ?>"
+                                                                data-updatedat="<?= $data['KATEGORI_updatedAt'] ? $updated_date -> format('l, j F Y, H:i:s A') : 'This data hasn\'t been updated' ?>">
                                                                 <i class="fas fa-eye" style="color: #5bc0de"></i></button>
                                                             </td>
                                                         </tr>
@@ -119,7 +119,7 @@
                                             </button>
                                         </div>
 
-                                        <form action="/Barang/update_kategori/" method="post" enctype="multipart/form-data">
+                                        <form action="/Produk/update_kategori/" method="post" enctype="multipart/form-data">
 
                                             <div class="modal-body">
                                                 <input type="hidden" class="form-control" name="id" id="id-kategori">

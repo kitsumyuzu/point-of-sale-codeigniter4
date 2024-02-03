@@ -38,17 +38,17 @@ class PembelianProduk extends Migration
 				'constraint' => 20,
 				'null' => true
 			],
-			'P_PRODUK_createdAt DATETIME DEFAULT current_timestamp',
-			'P_PRODUK_createdBy' => [
+			'PB_PRODUK_createdAt DATETIME DEFAULT current_timestamp',
+			'PB_PRODUK_createdBy' => [
 				'type' => 'INT',
 				'constraint' => 10,
 				'null' => true
 			],
-			'P_PRODUK_updatedAt' => [
+			'PB_PRODUK_updatedAt' => [
 				'type' => 'DATETIME',
 				'null' => true
 			],
-			'P_PRODUK_updateBy' => [
+			'PB_PRODUK_updatedBy' => [
 				'type' => 'INT',
 				'constraint' => 10,
 				'null' => true

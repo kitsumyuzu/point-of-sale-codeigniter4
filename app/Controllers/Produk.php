@@ -20,7 +20,7 @@ class Produk extends BaseController {
 
 				$Schema = new Schema();
 
-					$on = 'produk.id_kategori = kategori.id_kategori';
+					$on = 'produk.kategori_produk = kategori.id_kategori';
 
 					$setting['settings'] = $Schema -> getWhere('user', array('id_user' => session() -> get('id')));
 					$fetch['data_produk'] = $Schema -> visual_table_join2('produk', 'kategori', $on);
@@ -72,7 +72,7 @@ class Produk extends BaseController {
 
 					$kategori = $this -> request -> getPost('kategori');
 
-						$data = $Schema -> create_data('kategori', array('nama_kategori' => $kategori, 'KTG_CreatedBy' => session() -> get('id')));
+						$data = $Schema -> create_data('kategori', array('kategori' => $kategori, 'KATEGORI_createdBy' => session() -> get('id')));
 					
 				if ($data) {
 					
@@ -92,7 +92,7 @@ class Produk extends BaseController {
 
 				return redirect() -> to('/home/');
 
-			} else if (in_array(session() -> get('level'), [1]) && session() -> get('id') > 0) {
+			} else if (session() -> get('id') > 0) {
 
 				$Schema = new Schema();
 
@@ -101,9 +101,9 @@ class Produk extends BaseController {
 					$date = new DateTime('now', new DateTimeZone('Asia/Jakarta'));
 
 					$data = $Schema -> update_data('kategori', array(
-						'nama_kategori' => $kategori,
-						'KTG_UpdatedAt' => $date -> format('Y-m-d H:i:s'),
-						'KTG_UpdatedBy' => session() -> get('id')
+						'kategori' => $kategori,
+						'KATEGORI_updatedAt' => $date -> format('Y-m-d H:i:s'),
+						'KATEGORI_updatedBy' => session() -> get('id')
 					), array('id_kategori' => $id_kategori));
 					
 				if ($data) {
@@ -164,7 +164,7 @@ class Produk extends BaseController {
 					$stok_produk = $this -> request -> getPost('stok_produk');
 
 						$data = $Schema -> create_data('produk', array(
-							'id_kategori' => $kategori_produk,
+							'kategori_produk' => $kategori_produk,
 							'kode_produk' => $kode_produk,
 							'nama_produk' => $nama_produk,
 							'merk_produk' => $merk_produk,
@@ -172,7 +172,7 @@ class Produk extends BaseController {
 							'harga_penjualan' => $harga_penjualan_produk,
 							'diskon_produk' => $diskon_produk,
 							'stok_produk' => $stok_produk,
-							'PK_CreatedBy' => session() -> get('id')
+							'PRODUK_createdBy' => session() -> get('id')
 						));
 					
 				if ($data) {
@@ -208,15 +208,15 @@ class Produk extends BaseController {
 					$date = new DateTime('now', new DateTimeZone('Asia/Jakarta'));
 
 					$data = $Schema -> update_data('produk', array(
-						'id_kategori' => $kategori_produk,
+						'kategori_produk' => $kategori_produk,
 						'nama_produk' => $nama_produk,
 						'merk_produk' => $merk_produk,
 						'harga_pembelian' => $harga_pembelian_produk,
 						'harga_penjualan' => $harga_penjualan_produk,
 						'diskon_produk' => $diskon_produk,
 						'stok_produk' => $stok_produk,
-						'PK_UpdatedAt' => $date -> format('Y-m-d H:i:s'),
-						'PK_UpdatedBy' => session() -> get('id')
+						'PRODUK_updatedAt' => $date -> format('Y-m-d H:i:s'),
+						'PRODUK_updatedBy' => session() -> get('id')
 					), array('id_produk' => $id_produk));
 					
 				if ($data) {

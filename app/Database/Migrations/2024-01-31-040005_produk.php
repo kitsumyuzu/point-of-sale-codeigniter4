@@ -13,7 +13,7 @@ class Produk extends Migration
 				'unsigned' => true,
 				'auto_increment' => true
 			],
-			'kategori' => [
+			'kategori_produk' => [
 				'type' => 'INT',
 				'constraint' => 10,
 				'null' => true
@@ -65,7 +65,7 @@ class Produk extends Migration
 				'type' => 'DATETIME',
 				'null' => true
 			],
-			'PRODUK_updateBy' => [
+			'PRODUK_updatedBy' => [
 				'type' => 'INT',
 				'constraint' => 10,
 				'null' => true

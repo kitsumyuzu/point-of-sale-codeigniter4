@@ -36,7 +36,7 @@ class Pengeluaran extends Migration
 				'type' => 'DATETIME',
 				'null' => true
 			],
-			'PENGELUARAN_updateBy' => [
+			'PENGELUARAN_updatedBy' => [
 				'type' => 'INT',
 				'constraint' => 10,
 				'null' => true

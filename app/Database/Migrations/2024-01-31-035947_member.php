@@ -43,7 +43,7 @@ class Member extends Migration
 				'type' => 'DATETIME',
 				'null' => true
 			],
-			'MEMBER_updateBy' => [
+			'MEMBER_updatedBy' => [
 				'type' => 'INT',
 				'constraint' => 10,
 				'null' => true

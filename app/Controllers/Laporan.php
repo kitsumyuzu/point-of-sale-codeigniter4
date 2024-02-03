@@ -168,7 +168,7 @@ class Laporan extends BaseController {
 							'tanggal_pengeluaran' => $tanggal_pengeluaran,
 							'jenis_pengeluaran' => $jenis_pengeluaran,
 							'nominal_pengeluaran' => $nominal_pengeluaran,
-							'PEN_CreatedBy' => session() -> get('id')
+							'PENGELUARAN_createdBy' => session() -> get('id')
 						));
 
 				if ($data) {
@@ -203,8 +203,8 @@ class Laporan extends BaseController {
 							'tanggal_pengeluaran' => $tanggal_pengeluaran,
 							'jenis_pengeluaran' => $jenis_pengeluaran,
 							'nominal_pengeluaran' => $nominal_pengeluaran,
-							'PEN_UpdatedAt' => $date -> format('Y-m-d H:i:s'),
-							'PEN_UpdatedBy' => session() -> get('id')
+							'PENGELUARAN_updatedAt' => $date -> format('Y-m-d H:i:s'),
+							'PENGELUARAN_updatedBy' => session() -> get('id')
 						), array('id_pengeluaran' => $id_pengeluaran));
 
 				if ($data) {

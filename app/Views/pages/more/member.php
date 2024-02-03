@@ -36,8 +36,8 @@
                                                 <tbody>
                                                     <?php $no = 1;
                                                         foreach ($data_member as $data) {
-                                                            $created_date = new DateTime($data['MBR_CreatedAt'], new DateTimeZone('Asia/Jakarta'));
-                                                            $updated_date = new DateTime($data['MBR_UpdatedAt'], new DateTimeZone('Asia/Jakarta'));
+                                                            $created_date = new DateTime($data['MEMBER_createdAt'], new DateTimeZone('Asia/Jakarta'));
+                                                            $updated_date = new DateTime($data['MEMBER_updatedAt'], new DateTimeZone('Asia/Jakarta'));
                                                     ?>
                                                         <tr style="text-align: center;">
                                                             <td><?php echo $no++ ?></td>
@@ -62,8 +62,8 @@
                                                                 <button type="button" class="btn btn-link btn-sm btn-view"
                                                                 data-toggle="modal"
                                                                 data-target="#view_member_modals"
-                                                                data-createdat="<?= $data['MBR_CreatedAt'] ? $created_date -> format('l, j F Y, H:i:s A') : 'This data anonymously created' ?>"
-                                                                data-updatedat="<?= $data['MBR_UpdatedAt'] ? $updated_date -> format('l, j F Y, H:i:s A') : 'This data hasn\'t been updated' ?>">
+                                                                data-createdat="<?= $data['MEMBER_createdAt'] ? $created_date -> format('l, j F Y, H:i:s A') : 'This data anonymously created' ?>"
+                                                                data-updatedat="<?= $data['MEMBER_updatedAt'] ? $updated_date -> format('l, j F Y, H:i:s A') : 'This data hasn\'t been updated' ?>">
                                                                 <i class="fas fa-eye" style="color: #5bc0de"></i></button>
                                                             </td>
                                                         </tr>

@@ -28,7 +28,7 @@ class Kategori extends Migration
 				'type' => 'DATETIME',
 				'null' => true
 			],
-			'KATEGORI_updateBy' => [
+			'KATEGORI_updatedBy' => [
 				'type' => 'INT',
 				'constraint' => 10,
 				'null' => true

@@ -112,7 +112,7 @@
                         <hr>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="/Laporan/?">
+                                <a class="nav-link" href="/User/?">
                                     <i class="fas fa-circle-user menu-icon"></i>
                                     <span class="menu-title">User</span>
                                 </a>

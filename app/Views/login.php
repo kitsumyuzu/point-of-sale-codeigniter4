@@ -40,7 +40,7 @@
                                 <form action="<?= base_url('/home/authentication_login') ?>" class="pt-3" method="post">
 
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="username" placeholder="Username" focus required>
+                                        <input type="text" class="form-control" name="username" placeholder="Username" autofocus required>
                                     </div>
 
                                     <div class="form-group">

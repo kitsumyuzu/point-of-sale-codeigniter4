@@ -40,8 +40,8 @@
                                                 <tbody>
                                                     <?php $no = 1;
                                                         foreach ($data_produk as $data) {
-                                                            $created_date = new DateTime($data['PK_CreatedAt'], new DateTimeZone('Asia/Jakarta'));
-                                                            $updated_date = new DateTime($data['PK_UpdatedAt'], new DateTimeZone('Asia/Jakarta'));
+                                                            $created_date = new DateTime($data['PRODUK_createdAt'], new DateTimeZone('Asia/Jakarta'));
+                                                            $updated_date = new DateTime($data['PRODUK_updatedAt'], new DateTimeZone('Asia/Jakarta'));
                                                     ?>
 
                                                         <tr style="text-align: center;">
@@ -49,7 +49,7 @@
                                                             <td><?php echo $data['kode_produk'] ? $data['kode_produk'] : 'Kode produk tidak ditemukan' ?></td>
                                                             <td><?php echo $data['nama_produk'] ? ucwords($data['nama_produk']) : 'Produk tidak ditemukan' ?></td>
                                                             <td><?php echo $data['merk_produk'] ? ucwords($data['merk_produk']) : '-' ?></td>
-                                                            <td><?php echo $data['id_kategori'] ? ucwords($data['nama_kategori']) : 'Kategori tidak ditemukan' ?></td>
+                                                            <td><?php echo $data['kategori_produk'] ? ucwords($data['kategori']) : 'Kategori tidak ditemukan' ?></td>
                                                             <td>Rp. <?php echo $data['harga_pembelian'] ? $data['harga_pembelian'] : '-' ?></td>
                                                             <td>Rp. <?php echo $data['harga_penjualan'] ? $data['harga_penjualan'] : '-' ?></td>
                                                             <td><?php echo $data['diskon_produk'] ? ucwords($data['diskon_produk']) : '0' ?>%</td>
@@ -66,9 +66,9 @@
                                                                 data-kode="<?= $data['kode_produk']; ?>"
                                                                 data-nama="<?= $data['nama_produk']; ?>"
                                                                 data-merek="<?= $data['merk_produk']; ?>"
-                                                                data-kategori="<?= $data['id_kategori']; ?>"
-                                                                data-beli="<?= $data['harga_penjualan']; ?>"
-                                                                data-jual="<?= $data['harga_pembelian']; ?>"
+                                                                data-kategori="<?= $data['kategori_produk']; ?>"
+                                                                data-beli="<?= $data['harga_pembelian']; ?>"
+                                                                data-jual="<?= $data['harga_penjualan']; ?>"
                                                                 data-diskon="<?= $data['diskon_produk']; ?>"
                                                                 data-stock="<?= $data['stok_produk']; ?>">
                                                                 <i class="fas fa-square-pen" style="color: #f0ad4e"></i></button>
@@ -76,8 +76,8 @@
                                                                 <button type="button" class="btn btn-link btn-sm btn-view"
                                                                 data-toggle="modal"
                                                                 data-target="#view_barang_modals"
-                                                                data-createdat="<?= $data['PK_CreatedAt'] ? $created_date -> format('l, j F Y, H:i:s A') : 'This data anonymously created' ?>"
-                                                                data-updatedat="<?= $data['PK_UpdatedAt'] ? $updated_date -> format('l, j F Y, H:i:s A') : 'This data hasn\'t been updated' ?>">
+                                                                data-createdat="<?= $data['PRODUK_createdAt'] ? $created_date -> format('l, j F Y, H:i:s A') : 'This data anonymously created' ?>"
+                                                                data-updatedat="<?= $data['PRODUK_updatedAt'] ? $updated_date -> format('l, j F Y, H:i:s A') : 'This data hasn\'t been updated' ?>">
                                                                 <i class="fas fa-eye" style="color: #5bc0de"></i></button>
                                                             </td>
                                                         </tr>
@@ -136,7 +136,7 @@
 
                                                             ?>
 
-                                                                <option value="<?php echo $data['id_kategori'] ?>"><?php echo ucwords($data['nama_kategori']) ?></option>
+                                                                <option value="<?php echo $data['id_kategori'] ?>"><?php echo ucwords($data['kategori']) ?></option>
 
                                                             <?php
 
@@ -223,7 +223,7 @@
 
                                                             ?>
 
-                                                                <option value="<?php echo $data['id_kategori'] ?>"><?php echo ucwords($data['nama_kategori']) ?></option>
+                                                                <option value="<?php echo $data['id_kategori'] ?>"><?php echo ucwords($data['kategori']) ?></option>
 
                                                             <?php
 

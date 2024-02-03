@@ -36,8 +36,8 @@
                                                 <tbody>
                                                     <?php $no = 1;
                                                         foreach ($data_supplier as $data) {
-                                                            $created_date = new DateTime($data['SR_CreatedAt'], new DateTimeZone('Asia/Jakarta'));
-                                                            $updated_date = new DateTime($data['SR_UpdatedAt'], new DateTimeZone('Asia/Jakarta'));
+                                                            $created_date = new DateTime($data['SUPPLIER_createdAt'], new DateTimeZone('Asia/Jakarta'));
+                                                            $updated_date = new DateTime($data['SUPPLIER_updatedAt'], new DateTimeZone('Asia/Jakarta'));
                                                     ?>
                                                         <tr style="text-align: center;">
                                                             <td><?php echo $no++ ?></td>
@@ -53,7 +53,7 @@
                                                                 data-toggle="modal"
                                                                 data-target="#update_supplier_modals"
                                                                 data-id="<?= $data['id_supplier'] ?>"
-                                                                data-produk="<?= $data['id_produk'] ?>"
+                                                                data-produk="<?= $data['produk_supplier'] ?>"
                                                                 data-nama="<?= $data['nama_supplier'] ?>"
                                                                 data-alamat="<?= $data['alamat_supplier'] ?>"
                                                                 data-nohp="<?= substr($data['nomor_handphone_supplier'], 4) ?>">
@@ -62,8 +62,8 @@
                                                                 <button type="button" class="btn btn-link btn-sm btn-view"
                                                                 data-toggle="modal"
                                                                 data-target="#view_member_modals"
-                                                                data-createdat="<?= $data['SR_CreatedAt'] ? $created_date -> format('l, j F Y, H:i:s A') : 'This data anonymously created' ?>"
-                                                                data-updatedat="<?= $data['SR_UpdatedAt'] ? $updated_date -> format('l, j F Y, H:i:s A') : 'This data hasn\'t been updated' ?>">
+                                                                data-createdat="<?= $data['SUPPLIER_createdAt'] ? $created_date -> format('l, j F Y, H:i:s A') : 'This data anonymously created' ?>"
+                                                                data-updatedat="<?= $data['SUPPLIER_updatedAt'] ? $updated_date -> format('l, j F Y, H:i:s A') : 'This data hasn\'t been updated' ?>">
                                                                 <i class="fas fa-eye" style="color: #5bc0de"></i></button>
                                                             </td>
                                                         </tr>
