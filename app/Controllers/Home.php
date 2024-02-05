@@ -25,7 +25,7 @@ class Home extends BaseController {
 
 				echo view('layout/_header');
 				echo view('layout/_menu', $setting);
-				echo view('dashboard');
+				echo view('pages/dashboard');
 				echo view('layout/_footer');
 			}
 
